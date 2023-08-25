@@ -107,7 +107,7 @@ func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, to
 							combiCode = append(combiCode, gCombi.CombiCode...)
 							combiCode = append(combiCode, tCombi.CombiCode...)
 
-							teamPrincipal.CombiCode = []string{"TeamPrincipal-" + fmt.Sprint(tCount)}
+							teamPrincipal.CombiCode = []string{"TeamPrincipal-" + fmt.Sprint(tCount+1)}
 							combiCode = append(combiCode, teamPrincipal.CombiCode...)
 							count++
 							currentCombination := entities.Config{
