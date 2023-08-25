@@ -1,0 +1,347 @@
+{
+    "power": [
+        {
+            "cost":1,
+            "power": 46,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":2,
+            "power": 32,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 23
+        },
+        {
+            "cost":5,
+            "power": 50,
+            "aero": 32,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":6,
+            "power": 50,
+            "aero": 0,
+            "lightweight": 33,
+            "grip": 0
+        },
+        {
+            "cost":6,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":2,
+            "power": 27,
+            "aero": 18,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":2,
+            "power": 29,
+            "aero": 0,
+            "lightweight": 20,
+            "grip": 0
+        },
+        {
+            "cost":5,
+            "power": 50,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 26
+        },
+        {
+            "cost":4,
+            "power": 58,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 0
+        }
+    ],
+    "aero": [
+        {
+            "cost":2,
+            "power": 0,
+            "aero": 42,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":2,
+            "power": 0,
+            "aero": 28,
+            "lightweight": 18,
+            "grip": 0
+        },
+        {
+            "cost":3,
+            "power": 18,
+            "aero": 41,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":5,
+            "power": 0,
+            "aero": 50,
+            "lightweight": 0,
+            "grip": 17
+        },
+        {
+            "cost":2,
+            "power": 0,
+            "aero": 25,
+            "lightweight": 0,
+            "grip": 17
+        },
+        {
+            "cost":2,
+            "power": 18,
+            "aero": 28,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":6,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":4,
+            "power": 0,
+            "aero": 59,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":5,
+            "power": 33,
+            "aero": 42,
+            "lightweight": 0,
+            "grip": 0
+        }
+    ],
+    "lightweight":[
+        {
+            "cost":1,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 45,
+            "grip": 0
+        },
+        {
+            "cost":2,
+            "power": 0,
+            "aero": 21,
+            "lightweight": 29,
+            "grip": 0
+        },
+        {
+            "cost":4,
+            "power": 35,
+            "aero": 0,
+            "lightweight": 54,
+            "grip": 0
+        },
+        {
+            "cost":6,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 53,
+            "grip": 34
+        },
+        {
+            "cost": 2,
+            "power": 23,
+            "aero": 0,
+            "lightweight": 32,
+            "grip": 0
+        },
+        {
+            "cost":6,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":2,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 33,
+            "grip": 17
+        },
+        {
+            "cost":3,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 57,
+            "grip": 0
+        }
+    ],
+    "grip":[
+        {
+            "cost":1,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 43
+        },
+        {
+            "cost":1,
+            "power": 8,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 34
+        },
+        {
+            "cost":3,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 65
+        },
+        {
+            "cost":4,
+            "power": 0,
+            "aero": 17,
+            "lightweight": 0,
+            "grip": 51
+        },
+        {
+            "cost":7,
+            "power": 20,
+            "aero": 0,
+            "lightweight": 10,
+            "grip": 40
+        },
+        {
+            "cost":2,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 12,
+            "grip": 38
+        },
+        {
+            "cost":2,
+            "power": 0,
+            "aero": 21,
+            "lightweight": 0,
+            "grip": 30
+        },
+        {
+            "cost": 4,
+            "power": 25,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 43
+        },
+        {
+            "cost":4,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 32,
+            "grip": 51
+        },
+        {
+            "cost":7,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 33,
+            "grip": 68
+        }
+    ],
+    "tools":[
+        {
+            "cost":1,
+            "power": 0,
+            "aero": 37,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":1,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 36,
+            "grip": 0
+        },
+        {
+            "cost":1,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 37
+        },
+        {
+            "cost":1,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 37
+        },
+        {
+            "cost": 2,
+            "power": 36,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 0
+        },
+        {
+            "cost":3,
+            "power": 0,
+            "aero": 0,
+            "lightweight": 0,
+            "grip": 55
+        },
+        {
+            "cost":4,
+            "power": 0,
+            "aero": 29,
+            "lightweight": 25,
+            "grip": 0
+        }
+    ],
+    "cons":[
+        {
+            "id":1,
+            "cost":3,
+            "power": 1,
+            "aero": 1,
+            "lightweight": 1.15,
+            "grip": 1
+        },
+        {
+            "id":2,
+            "cost":4,
+            "power": 1.15,
+            "aero": 1,
+            "lightweight": 1,
+            "grip": 1
+        },
+        {
+            "id":3,
+            "cost":3,
+            "power": 1,
+            "aero": 1,
+            "lightweight": 1,
+            "grip": 1.13
+        },
+        {
+            "id":4,
+            "cost":4,
+            "power": 1,
+            "aero": 1.13,
+            "lightweight": 1,
+            "grip": 1
+        }
+    ]
+}
