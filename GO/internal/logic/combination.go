@@ -69,7 +69,7 @@ func removeLesserCombi(combinations []entities.Config) []entities.Config {
 	return goodCombi
 }
 
-func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, totalPoints float64) {
+func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, totalPoints float64, idealValueMatchCount int) {
 
 	tm := time.Now()
 
@@ -94,12 +94,18 @@ func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, to
 
 	count := 0
 
+	idealValueMatchCount = 0
+	idealValueMissDiff := 999999.99
+
 	for _, pCombi := range powerCombination {
 		for _, aCombi := range aeroCombination {
 			for _, lCombi := range ligtWeightCombination {
 				for _, gCombi := range gripCombination {
 					for _, tCombi := range toolCombination {
 						for tCount, teamPrincipal := range data.TeamPrincipals {
+
+							idealValueMCount := 0
+							idealValueMDiff := 0.0
 
 							combiCode := pCombi.CombiCode
 							combiCode = append(combiCode, aCombi.CombiCode...)
@@ -121,9 +127,43 @@ func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, to
 
 							score := currentCombination.Power + currentCombination.Aero + currentCombination.LigtWeight + currentCombination.Grip
 
-							if score > totalPoints && currentCombination.Cost <= idelConfig.Cost && currentCombination.Power >= idelConfig.Power && currentCombination.Aero >= idelConfig.Aero && currentCombination.LigtWeight >= idelConfig.LigtWeight && currentCombination.Grip >= idelConfig.Grip {
+							if currentCombination.Cost > idelConfig.Cost {
+								continue
+							}
+
+							if currentCombination.Power >= idelConfig.Power {
+								idealValueMCount++
+							} else {
+								idealValueMDiff += idelConfig.Power - currentCombination.Power
+							}
+
+							if currentCombination.Aero >= idelConfig.Aero {
+								idealValueMCount++
+							} else {
+								idealValueMDiff += idelConfig.Aero - currentCombination.Aero
+							}
+
+							if currentCombination.LigtWeight >= idelConfig.LigtWeight {
+								idealValueMCount++
+							} else {
+								idealValueMDiff += idelConfig.LigtWeight - currentCombination.LigtWeight
+							}
+
+							if currentCombination.Grip >= idelConfig.Grip {
+								idealValueMCount++
+							} else {
+								idealValueMDiff += idelConfig.Grip - currentCombination.Grip
+							}
+
+							if idealValueMCount > idealValueMatchCount {
+								idealValueMatchCount = idealValueMCount
 								totalPoints = score
 								bestConfig = &currentCombination
+								idealValueMissDiff = idealValueMDiff
+							} else if idealValueMCount == idealValueMatchCount && (idealValueMDiff < idealValueMissDiff || (idealValueMDiff == idealValueMissDiff && score > totalPoints)) {
+								totalPoints = score
+								bestConfig = &currentCombination
+								idealValueMissDiff = idealValueMDiff
 							}
 
 							if count%5000000 == 0 {

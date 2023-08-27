@@ -137,7 +137,7 @@ var AeroComponents = []entities.Config{
 	{
 		Cost:       4,
 		Power:      0,
-		Aero:       59,
+		Aero:       64,
 		LigtWeight: 0,
 		Grip:       0,
 		IsActive:   true,
@@ -306,7 +306,7 @@ var Tools = []entities.Config{
 	{
 		Cost:       1,
 		Power:      0,
-		Aero:       37,
+		Aero:       40,
 		LigtWeight: 0,
 		Grip:       0,
 		IsActive:   true,
@@ -315,7 +315,7 @@ var Tools = []entities.Config{
 		Cost:       1,
 		Power:      0,
 		Aero:       0,
-		LigtWeight: 36,
+		LigtWeight: 39,
 		Grip:       0,
 		IsActive:   true,
 	},

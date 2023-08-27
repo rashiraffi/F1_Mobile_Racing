@@ -12,19 +12,20 @@ import (
 
 func main() {
 	tim := time.Now()
-	idlCombi, totalPoints := logic.GetIdealConfig(entities.Config{
+	idlCombi, totalPoints, matchScore := logic.GetIdealConfig(entities.Config{
 		Power:      340,
-		Aero:       320,
-		LigtWeight: 320,
-		Grip:       340,
-		Cost:       44,
+		Aero:       360,
+		LigtWeight: 340,
+		Grip:       360,
+		Cost:       47,
 	})
 	if idlCombi == nil {
 		fmt.Println("No Ideal Combination Found")
 		return
 	}
 
-	fmt.Println("Total Points: ", totalPoints+(26+28+33))
+	fmt.Println("Total Points: ", totalPoints+(26+17+26))
+	fmt.Println("Match Score: ", matchScore)
 	fmt.Println("Ideal Combination: ", idlCombi)
 	fmt.Println("Time: ", time.Since(tim))
 
@@ -39,6 +40,11 @@ func main() {
 
 	data := []string{fmt.Sprintf("%.0f", totalPoints), fmt.Sprintf("%d", int(idlCombi.Power)), fmt.Sprintf("%d", int(idlCombi.Aero)), fmt.Sprintf("%d", int(idlCombi.LigtWeight)), fmt.Sprintf("%d", int(idlCombi.Grip)), fmt.Sprintf("%d", int(idlCombi.Cost))}
 	err = writer.Write(data)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = logic.CsvToXlsx("results.csv", "results.xlsx")
 	if err != nil {
 		log.Fatal(err)
 	}
