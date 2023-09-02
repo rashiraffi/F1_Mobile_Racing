@@ -73,6 +73,13 @@ func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, to
 
 	tm := time.Now()
 
+	avgConfig := entities.Config{
+		Power:      0,
+		Aero:       0,
+		LigtWeight: 0,
+		Grip:       0,
+	}
+
 	powerCombination := calculateCombination("Power", data.PowerComponents)
 	aeroCombination := calculateCombination("Aero", data.AeroComponents)
 	ligtWeightCombination := calculateCombination("LigtWeight", data.LightWeightComponents)
@@ -119,10 +126,10 @@ func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, to
 							currentCombination := entities.Config{
 								CombiCode:  combiCode,
 								Cost:       pCombi.Cost + aCombi.Cost + lCombi.Cost + gCombi.Cost + tCombi.Cost + teamPrincipal.Cost,
-								Power:      (107.0 + pCombi.Power + aCombi.Power + lCombi.Power + gCombi.Power + tCombi.Power) * teamPrincipal.Power,
-								Aero:       (161.0 + pCombi.Aero + aCombi.Aero + lCombi.Aero + gCombi.Aero + tCombi.Aero) * teamPrincipal.Aero,
+								Power:      (108.0 + pCombi.Power + aCombi.Power + lCombi.Power + gCombi.Power + tCombi.Power) * teamPrincipal.Power,
+								Aero:       (162.0 + pCombi.Aero + aCombi.Aero + lCombi.Aero + gCombi.Aero + tCombi.Aero) * teamPrincipal.Aero,
 								LigtWeight: (81.0 + pCombi.LigtWeight + aCombi.LigtWeight + lCombi.LigtWeight + gCombi.LigtWeight + tCombi.LigtWeight) * teamPrincipal.LigtWeight,
-								Grip:       (215.0 + pCombi.Grip + aCombi.Grip + lCombi.Grip + gCombi.Grip + tCombi.Grip) * teamPrincipal.Grip,
+								Grip:       (216.0 + pCombi.Grip + aCombi.Grip + lCombi.Grip + gCombi.Grip + tCombi.Grip) * teamPrincipal.Grip,
 							}
 
 							score := currentCombination.Power + currentCombination.Aero + currentCombination.LigtWeight + currentCombination.Grip
@@ -130,6 +137,12 @@ func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, to
 							if currentCombination.Cost > idelConfig.Cost {
 								continue
 							}
+
+							// Avg
+							avgConfig.Power += currentCombination.Power
+							avgConfig.Aero += currentCombination.Aero
+							avgConfig.LigtWeight += currentCombination.LigtWeight
+							avgConfig.Grip += currentCombination.Grip
 
 							if currentCombination.Power >= idelConfig.Power {
 								idealValueMCount++
@@ -175,6 +188,13 @@ func GetIdealConfig(idelConfig entities.Config) (bestConfig *entities.Config, to
 			}
 		}
 	}
+
+	avgConfig.Power /= float64(count)
+	avgConfig.Aero /= float64(count)
+	avgConfig.LigtWeight /= float64(count)
+	avgConfig.Grip /= float64(count)
+
+	fmt.Println("Average Combination: Power: ", avgConfig.Power, " Aero: ", avgConfig.Aero, " LigtWeight: ", avgConfig.LigtWeight, " Grip: ", avgConfig.Grip)
 
 	return
 

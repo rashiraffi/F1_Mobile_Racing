@@ -1,3 +1,3 @@
 package data
 
-const Thershold float64 = .8
+const Thershold float64 = .85

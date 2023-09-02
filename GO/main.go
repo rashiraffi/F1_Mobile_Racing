@@ -13,20 +13,25 @@ import (
 func main() {
 	tim := time.Now()
 	idlCombi, totalPoints, matchScore := logic.GetIdealConfig(entities.Config{
-		Power:      340,
-		Aero:       360,
-		LigtWeight: 340,
-		Grip:       360,
-		Cost:       47,
+		Power:      335,
+		Aero:       355,
+		LigtWeight: 305,
+		Grip:       375,
+		Cost:       53,
 	})
 	if idlCombi == nil {
 		fmt.Println("No Ideal Combination Found")
 		return
 	}
 
-	fmt.Println("Total Points: ", totalPoints+(26+17+26))
+	fmt.Println("Total Points: ", totalPoints+(28+36+31))
 	fmt.Println("Match Score: ", matchScore)
-	fmt.Println("Ideal Combination: ", idlCombi)
+	fmt.Println("Ideal Combination: ", idlCombi.CombiCode)
+	fmt.Println("Power: ", idlCombi.Power)
+	fmt.Println("Aero: ", idlCombi.Aero)
+	fmt.Println("LigtWeight: ", idlCombi.LigtWeight)
+	fmt.Println("Grip: ", idlCombi.Grip)
+	fmt.Println("Cost: ", idlCombi.Cost)
 	fmt.Println("Time: ", time.Since(tim))
 
 	file, err := os.OpenFile("results.csv", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
